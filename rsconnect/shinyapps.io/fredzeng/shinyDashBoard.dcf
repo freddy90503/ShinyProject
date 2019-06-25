@@ -1,0 +1,12 @@
+name: shinyDashBoard
+title: shinyDashBoard
+username:
+account: fredzeng
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 996363
+bundleId: 2176200
+url: https://fredzeng.shinyapps.io/shinyDashBoard/
+when: 1561437055.07805
+asMultiple: FALSE
+asStatic: FALSE
