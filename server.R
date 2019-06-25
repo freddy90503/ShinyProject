@@ -113,6 +113,18 @@ shinyServer(function(input, output,session) {
         
     })   
     output$Delta <- renderPlot({ 
+        sum(is.na(tweets$negativereason_confidence))
+        mean(tweets$negativereason_confidence, na.rm=TRUE)
+        
+        by_negativereason_airline <- group_by(tweets,airline)
+        categorized_negativereason_airline <- summarize (by_negativereason_airline,n=n(),
+                                                         mn=mean(negativereason_confidence,na.rm = TRUE))
+        categorized_negativereason_airline
+        
+        text_df <- data_frame(line = 1:nrow(tweets), airline=tweets$airline, text = tweets$text )
+        
+        text_df$text <- as.character(text_df$text)
+        grouped_text <- unnest_tokens(text_df,word, text)
     grouped_text %>% filter(airline == 'Delta')%>%
         anti_join(stop_words) %>%
         count(word) %>%
@@ -120,6 +132,18 @@ shinyServer(function(input, output,session) {
     }) 
     
     output$SW <- renderPlot({ 
+        sum(is.na(tweets$negativereason_confidence))
+        mean(tweets$negativereason_confidence, na.rm=TRUE)
+        
+        by_negativereason_airline <- group_by(tweets,airline)
+        categorized_negativereason_airline <- summarize (by_negativereason_airline,n=n(),
+                                                         mn=mean(negativereason_confidence,na.rm = TRUE))
+        categorized_negativereason_airline
+        
+        text_df <- data_frame(line = 1:nrow(tweets), airline=tweets$airline, text = tweets$text )
+        
+        text_df$text <- as.character(text_df$text)
+        grouped_text <- unnest_tokens(text_df,word, text)
         ##Southwest WordCloud
         grouped_text %>% filter(airline == 'Southwest')%>%
             anti_join(stop_words) %>%
@@ -128,6 +152,18 @@ shinyServer(function(input, output,session) {
     }) 
     
     output$UA <- renderPlot({ 
+        sum(is.na(tweets$negativereason_confidence))
+        mean(tweets$negativereason_confidence, na.rm=TRUE)
+        
+        by_negativereason_airline <- group_by(tweets,airline)
+        categorized_negativereason_airline <- summarize (by_negativereason_airline,n=n(),
+                                                         mn=mean(negativereason_confidence,na.rm = TRUE))
+        categorized_negativereason_airline
+        
+        text_df <- data_frame(line = 1:nrow(tweets), airline=tweets$airline, text = tweets$text )
+        
+        text_df$text <- as.character(text_df$text)
+        grouped_text <- unnest_tokens(text_df,word, text)
         ##United WordCloud
         grouped_text %>% filter(airline == 'United')%>%
             anti_join(stop_words) %>%
@@ -136,6 +172,18 @@ shinyServer(function(input, output,session) {
     }) 
     
     output$US <- renderPlot({ 
+        sum(is.na(tweets$negativereason_confidence))
+        mean(tweets$negativereason_confidence, na.rm=TRUE)
+        
+        by_negativereason_airline <- group_by(tweets,airline)
+        categorized_negativereason_airline <- summarize (by_negativereason_airline,n=n(),
+                                                         mn=mean(negativereason_confidence,na.rm = TRUE))
+        categorized_negativereason_airline
+        
+        text_df <- data_frame(line = 1:nrow(tweets), airline=tweets$airline, text = tweets$text )
+        
+        text_df$text <- as.character(text_df$text)
+        grouped_text <- unnest_tokens(text_df,word, text)
     grouped_text %>% filter(airline == 'US Airways')%>%
         anti_join(stop_words) %>%
         count(word) %>%
@@ -143,6 +191,18 @@ shinyServer(function(input, output,session) {
     })
     
     output$VA <- renderPlot({ 
+        sum(is.na(tweets$negativereason_confidence))
+        mean(tweets$negativereason_confidence, na.rm=TRUE)
+        
+        by_negativereason_airline <- group_by(tweets,airline)
+        categorized_negativereason_airline <- summarize (by_negativereason_airline,n=n(),
+                                                         mn=mean(negativereason_confidence,na.rm = TRUE))
+        categorized_negativereason_airline
+        
+        text_df <- data_frame(line = 1:nrow(tweets), airline=tweets$airline, text = tweets$text )
+        
+        text_df$text <- as.character(text_df$text)
+        grouped_text <- unnest_tokens(text_df,word, text)
     ##Virgin America Word Cloud
     grouped_text %>% filter(airline == 'Virgin America')%>%
         anti_join(stop_words) %>%
