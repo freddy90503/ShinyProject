@@ -5,8 +5,8 @@ account: fredzeng
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 996363
-bundleId: 2176200
+bundleId: 2177751
 url: https://fredzeng.shinyapps.io/shinyDashBoard/
-when: 1561437055.07805
+when: 1561485140.08883
 asMultiple: FALSE
 asStatic: FALSE

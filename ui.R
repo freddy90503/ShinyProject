@@ -11,8 +11,9 @@ shinyUI(dashboardPage(skin = ("yellow"),
                           sidebarMenu(
                               menuItem("Introduction", tabName = "Introduction", icon = icon("database")),
                               menuItem("Overall", tabName = "Overall", icon = icon("map")),
-                              # menuItem("Airlines", tabName = "By Airlines", icon = icon("map")),
+                              menuItem("Airlines", tabName = "Airlines", icon = icon("map")),
                               menuItem("Words", tabName = "Words", icon = icon("database")),
+                              menuItem("Map", tabName = "Map", icon = icon("database")),
                               menuItem("Data", tabName = "Data", icon = icon("database"))
                               
                           )
@@ -37,17 +38,30 @@ shinyUI(dashboardPage(skin = ("yellow"),
                               tabItem(tabName = "Overall",
                                       fluidRow(
                                           box(width = 12, plotOutput("hist"),height = 420, background = "black"),
-                                          box(width = 12, plotOutput("air"),height = 420, background = "black")
+                                          box(width = 12, plotOutput("over"),height = 420, background = "black"),
+                                          box(width = 12, plotOutput("yuan"),height = 420, background = "black")
                                       )),
-                              # tabItem(tabName = "Airlines",
-                              #         fluidRow(
-                              #             box(width = 12, plotOutput("air"),height = 420, background = "black")
-                                      # )),
+                              tabItem(tabName = "Airlines",
+                                      fluidRow(
+                                          box(width = 12, plotOutput("air"),height = 420, background = "black"),
+                                          box(width = 12, plotOutput("one"),height = 420, background = "black"),
+                                          box(width = 12, plotOutput("six"),height = 420, background = "black")
+                              )),
                               tabItem(tabName = "Words",
                                       fluidRow(
                                           box(width = 12, plotOutput("reason"), height = 420, background = "black"),
-                                          box(width = 12, plotOutput("negative"), height = 420, background = "black")
+                                          box(width = 12, plotOutput("negative"), height = 420, background = "black"),
+                                          box(plotOutput("AA"), height = 420, background = "black"),
+                                          box(plotOutput("SW"), height = 420, background = "black"),
+                                          box(plotOutput("UA"), height = 420, background = "black"),
+                                          box(plotOutput("US"), height = 420, background = "black"),
+                                          box(plotOutput("VA"), height = 420, background = "black"),
+                                          box(plotOutput("Delta"), height = 420, background = "black")
                                           
+                                      )),
+                              tabItem(tabName = "Map",
+                                      fluidRow(
+                                        box(width = 12, plotOutput("MAPS"),height = 420, background = "black")
                                       )),
                               tabItem(tabName = "Data",
                                       fluidRow(DT::dataTableOutput("playertable")))
